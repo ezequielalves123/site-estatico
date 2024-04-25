@@ -1,0 +1,268 @@
+<!-- Ezequiel Alves Morais, Gabriel Souza, Daniela -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+/>
+<link
+  href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+  }
+
+  main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+
+  .right-arrow {
+    right: 10px;
+  }
+
+  .arrow img {
+    width: 30px;
+    height: 30px;
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,500;1,600&display=swap");
+
+  :root {
+    --color-dark1: #dae1e7;
+    --color-dark2: #142850;
+    --color-dark3: #414141;
+    --color-dark4: #00909e;
+    --color-dark5: #343434;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    background-color: var(--color-dark1);
+    color: var(--color-white);
+  }
+
+  footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-dark2);
+    height: 125px;
+    margin-top: 200px;
+  }
+
+  .div-footer {
+    padding-top: 20px;
+  }
+
+  #p-link {
+    color: var(--color-dark1);
+  }
+
+  .link-footer {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: "Raleway", sans-serif;
+    padding: 5px;
+  }
+
+  .link-footer:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    color: rgba(221, 221, 29, 0.945);
+    text-transform: uppercase;
+  }
+
+  .img-footer {
+    height: 30px;
+    width: 30px;
+    padding-top: 5px;
+  }
+
+  .img-footer:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .link-image {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .logo {
+    max-width: 100px;
+  }
+
+  .navbar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 60px;
+  }
+</style>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <img src="images/logo1.png" alt="" class="logo" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quem_somos.html">Quem Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="exibicao_produtos.html">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho_compras.html">Carrinho</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="cadastro_produtos.html"
+              >Cadastro de Produtos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login.html"
+              >Entre ou Cadastre-se</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <h1>Seja Bem-vindo a nossa loja</h1>
+  <div class="arrow left-arrow" onclick="prevImage()">
+    <img src="images/left.png" alt="Previous" />
+  </div>
+  <div class="arrow right-arrow" onclick="nextImage()">
+    <img src="images/right.png" alt="Next" />
+  </div>
+</main>
+
+<script>
+  var currentImageIndex = 0;
+  var images = ["images/sapato1.jpg", "images/sapato3.jpg"];
+
+  function setBackground(imageIndex) {
+    document.body.style.backgroundImage = "url('" + images[imageIndex] + "')";
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    setBackground(currentImageIndex);
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    setBackground(currentImageIndex);
+  }
+
+  setBackground(currentImageIndex);
+</script>
+
+<footer>
+  <div class="div-footer">
+    <p id="p-link">
+      <a class="link-footer" href="form.html">Ajuda</a> |
+      <a class="link-footer" href="#">Contato</a> |
+      <a class="link-footer" href="#">Trabalhe conosco</a> |
+      <a class="link-footer" href="#">Acessibilidade</a> |
+      <a class="link-footer" href="#">Política de privacidade</a> |
+      <a class="link-footer" href="#">Trabalhe conosco</a>
+    </p>
+  </div>
+
+  <div class="div-footer">
+    <a class="link-image" href="https://instagram.com" target="_blank"
+      ><img
+        class="img-footer"
+        src="images/logo-do-cone-do-instagram.png"
+        alt="logo-instagram"
+    /></a>
+    <a class="link-image" href="https://facebook.com" target="_blank"
+      ><img class="img-footer" src="images/logo-face.png" alt="logo-facebook"
+    /></a>
+    <a class="link-image" href="https://twitter.com" target="_blank"
+      ><img
+        class="img-footer"
+        src="images/logo-twitters.png"
+        alt="logo-twitter"
+    /></a>
+    <a class="link-image" href="https://whatsapp.com" target="_blank"
+      ><img class="img-footer" src="images/logo-zap.png" alt="logo-whatsapp "
+    /></a>
+    <a class="link-image" href="https://youtube.com" target="_blank"
+      ><img
+        class="img-footer"
+        src="images/logo-youtube.png"
+        alt="images/logo-youtube"
+    /></a>
+  </div>
+</footer>

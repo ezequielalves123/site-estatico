@@ -1,0 +1,397 @@
+<!-- Ezequiel Alves Morais, Gabriel Souza, Daniela -->
+<style>
+  .produtos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .produto {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+  }
+
+  .produto h3 {
+    margin-top: 0;
+  }
+
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .produto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .produto:hover {
+    transform: translateY(-5px);
+  }
+
+  .produto img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .produto h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .produto p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .produto button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #142c54;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .produto button:hover {
+    background-color: #0056b3;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .navbar {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 60px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,500;1,600&display=swap');
+
+  :root {
+    --color-dark1: #dae1e7;
+    --color-dark2: #142850;
+    --color-dark3: #414141;
+    --color-dark4: #00909E;
+    --color-dark5: #343434;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    background-color: var(--color-dark1);
+    color: var(--color-white);
+
+  }
+
+  footer {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-dark2);
+    height: 125px;
+    margin-top: 200px;
+  }
+
+  .div-footer {
+    padding-top: 20px;
+  }
+
+  #p-link {
+    color: var(--color-dark1);
+  }
+
+  .link-footer {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: 'Raleway', sans-serif;
+    padding: 5px;
+  }
+
+  .link-footer:hover {
+    transition: 0.5s;
+    cursor: pointer;
+    color: rgba(221, 221, 29, 0.945);
+    text-transform: uppercase;
+  }
+
+  .img-footer {
+    height: 30px;
+    width: 30px;
+    padding-top: 5px;
+  }
+
+  .img-footer:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .link-image {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  </style>
+</style>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <img src="images/logo1.png" alt="" class="logo" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="quem_somos.php">Quem Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="exibicao_produtos.php">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="carrinho_compras.php">Carrinho</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="cadastro_produtos.php"
+                  >Cadastro de Produtos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="login.php"
+                  >Entre ou Cadastre-se</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h2>Produtos</h2>
+      <div class="grid-produtos">
+          <div class="produto">
+              <img src="images/1.jpg" alt="AeroRunner">
+              <h3>AeroRunner</h3>
+              <p>Domine cada corrida com os tênis AeroRunner. Leves e aerodinâmicos, esses tênis oferecem uma combinação perfeita de estabilidade e flexibilidade.</p>
+              <p>Preço: R$ 29.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/2.png" alt="FlexStep">
+              <h3>FlexStep</h3>
+              <p>Dê passos confiantes com os tênis FlexStep. Projetados para proporcionar flexibilidade e estabilidade.</p>
+              <p>Preço: R$ 39.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/3.png" alt="Air Force">
+              <h3>Air Force</h3>
+              <p>Os tênis Air Force são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato5.jpg" alt="AeroRunner">
+              <h3>AeroRunner</h3>
+              <p>Domine cada corrida com os tênis AeroRunner. Leves e aerodinâmicos, esses tênis oferecem uma combinação perfeita de estabilidade e flexibilidade.</p>
+              <p>Preço: R$ 29.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato4.jpg" alt="AeroZoom">
+              <h3>AeroZoom</h3>
+              <p>Dê passos confiantes com os tênis FlexStep. Projetados para proporcionar flexibilidade e estabilidade.</p>
+              <p>Preço: R$ 39.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sandalia.jpg" alt="MaxMotion">
+              <h3>MaxMotion</h3>
+              <p>Os tênis Air Force são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato5.jpg" alt="AeroRunner">
+              <h3>AeroRunner</h3>
+              <p>Domine cada corrida com os tênis AeroRunner. Leves e aerodinâmicos, esses tênis oferecem uma combinação perfeita de estabilidade e flexibilidade.</p>
+              <p>Preço: R$ 29.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato4.jpg" alt="UltraSprint">
+              <h3>UltraSprint</h3>
+              <p>Dê passos confiantes com os tênis UltraSprint. Projetados para proporcionar flexibilidade e estabilidade.</p>
+              <p>Preço: R$ 39.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato1.jpg" alt="SpeedStride">
+              <h3>SpeedStride</h3>
+              <p>Os tênis SpeedStride são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato3.jpg" alt="FlexiFit">
+              <h3>FlexiFit</h3>
+              <p>Os tênis FlexiFit são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato6.jpg" alt="TurboGrip">
+              <h3>TurboGrip</h3>
+              <p>Os tênis TurboGrip são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato8.jpg" alt="Velocity Boost">
+              <h3>Velocity Boost</h3>
+              <p>Os tênis Velocity Boost são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato7.jpg" alt="TurboTech">
+              <h3>TurboTech</h3>
+              <p>Os tênis TurboTech são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sapato9.jpg" alt="PowerPace">
+              <h3>PowerPace</h3>
+              <p>Os tênis PowerPace são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+          <div class="produto">
+              <img src="images/sandalia3.jpg" alt="SwiftStride">
+              <h3>SwiftStride</h3>
+              <p>Os tênis SwiftStride são feitos para se adaptar ao seu movimento. Com um ajuste flexível e confortável.</p>
+              <p>Preço: R$ 49.99</p>
+              <button>Comprar</button>
+          </div>
+      </div>
+  </main>
+    <footer>
+      <div class="div-footer">
+        <p id="p-link">
+          <a class="link-footer" href="form.html">Ajuda</a> |
+          <a class="link-footer" href="#">Contato</a> |
+          <a class="link-footer" href="#">Trabalhe conosco</a> |
+          <a class="link-footer" href="#">Acessibilidade</a> |
+          <a class="link-footer" href="#">Política de privacidade</a> |
+          <a class="link-footer" href="#">Trabalhe conosco</a>
+        </p>
+      </div>
+
+      <div class="div-footer">
+        <a class="link-image" href="https://instagram.com" target="_blank"
+          ><img
+            class="img-footer"
+            src="images/logo-do-cone-do-instagram.png"
+            alt="logo-instagram"
+        /></a>
+        <a class="link-image" href="https://facebook.com" target="_blank"
+          ><img
+            class="img-footer"
+            src="images/logo-face.png"
+            alt="logo-facebook"
+        /></a>
+        <a class="link-image" href="https://twitter.com" target="_blank"
+          ><img
+            class="img-footer"
+            src="images/logo-twitters.png"
+            alt="logo-twitter"
+        /></a>
+        <a class="link-image" href="https://whatsapp.com" target="_blank"
+          ><img
+            class="img-footer"
+            src="images/logo-zap.png"
+            alt="logo-whatsapp "
+        /></a>
+        <a class="link-image" href="https://youtube.com" target="_blank"
+          ><img
+            class="img-footer"
+            src="images/logo-youtube.png"
+            alt="images/logo-youtube"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

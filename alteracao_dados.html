@@ -37,30 +37,31 @@
 
   .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
-    justify-items: center;
-  }
-
-  .produto {
+    justify-items: center; 
+}
+.produto {
     border: 1px solid #ccc;
     padding: 15px;
     text-align: center;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
+    width: 100%; 
+    max-width: 300px; 
+}
 
   .produto:hover {
     transform: translateY(-5px);
   }
 
   .produto img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
+    width: 100%; 
+    height: auto; 
+    max-height: 250px; 
     border-bottom: 1px solid #ddd;
-  }
+}
 
   .produto h3 {
     font-size: 18px;
@@ -185,7 +186,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+  
   </head>
 
   <body>
@@ -207,16 +208,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Inicio</a>
+                <a class="nav-link" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="quem_somos.php">Quem Somos</a>
+                <a class="nav-link" href="quem_somos.html">Quem Somos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="exibicao_produtos.php">Produtos</a>
+                <a class="nav-link" href="exibicao_produtos.html">Produtos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="carrinho_compras.php">Carrinho</a>
+                <a class="nav-link" href="carrinho_compras.html">Carrinho</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -224,12 +225,12 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="cadastro_produtos.php"
+                  href="cadastro_produtos.html"
                   >Cadastro de Produtos</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="login.php"
+                <a class="nav-link active" aria-current="page" href="login.html"
                   >Entre ou Cadastre-se</a
                 >
               </li>
@@ -239,7 +240,7 @@
       </nav>
     </header>
     <main>
-      <h2>Produtos</h2>
+      <h2>Alterar Produtos</h2>
       <div class="grid-produtos">
           <div class="produto">
               <img src="images/1.jpg" alt="AeroRunner">
@@ -356,7 +357,7 @@
           <a class="link-footer" href="#">Trabalhe conosco</a> |
           <a class="link-footer" href="#">Acessibilidade</a> |
           <a class="link-footer" href="#">Política de privacidade</a> |
-          <a class="link-footer" href="#">Trabalhe conosco</a>
+    
         </p>
       </div>
 
